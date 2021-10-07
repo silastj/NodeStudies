@@ -2,7 +2,22 @@ import { Router, Request, Response} from 'express'
 
 const router = Router();
 router.get('/', (req: Request, res: Response) =>{
-    res.send('Página Home!')
+
+    let idade : number = 51
+    let showIdade: boolean = false
+
+    if(idade > 50){
+        showIdade = true
+    }
+
+
+    let name = "Amós"
+    res.render('home',{
+        user:' Silas',
+        name,
+        idade,
+        showIdade
+    })
 })
 router.get('/contato', (req: Request, res: Response) =>{
     res.send('Página Contato!')

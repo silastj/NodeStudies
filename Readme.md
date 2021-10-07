@@ -158,11 +158,76 @@
     # server.use(express.static('public'))
     Digitando no Navegador,  tera o retorno do arquivo mencionado acima!
     # http://localhost:4000/css/styles.css
-    Usando a biblioteca path do proprio express para deixar dinamico a rota
+    Usando a biblioteca path que vem junto da biblioteca express - para pegar o diretorio absoluto
     # import path from 'path'
     # server.use(express.static(path.join(__dirname,'../public'))); 
 
-    
+- Templates Engines ( html )
+    Biblioteca Pug ou Mustache( php, pyton, ruby) temos [express] e o [adonis] que é mais robusto, ele usa no lugar do [mustache] o [edge]
+    Instalando o mustache
+    # npm install mustache-express
+    # npm install --save-dev @types/mustache-express
+    importar
+    # import mustache from 'mustache-express'
+    Dentro do server.ts iremos chamar o mustache, seta a pasta e finalizar a chamada
+    # server.set('view engine', 'mustache');  
+    # server.set('views',  path.join(__dirname, 'views')); 
+    # server.engine('mustache', mustache()); 
+    Criando o arquivo do template dentro da pasta views
+    # home.mustache   
+    extensão do mustache ( mustache syntax)
+    Criaremos o template dentro da 
+    # home.mustache
+    Mudaremos a pasta routes index.ts
+    Desse:
+    # res.send('Página Home!')
+    Para o nome da página
+    # res.render('home')
+
+    Para funcionar o nodemon nas extensões do mustache segue abaixo:
+    alterar a linha do arquivo package.json
+    # "dev": "nodemon src/server.ts"
+    # "dev": "nodemon -e ts,json,mustache src/server.ts"
+
+
+- Exibindo informações na tela view
+    Na pasta routes no arquivo index.ts onde envia a informações, podemos incluir um [objeto] ou [variavel] no render.
+    # res.render('home', {
+        user:'Silas'
+    })
+    E no template vc recebe o objeto( enviando informações)
+    # {{user}}
+    ou uma variavel:
+    # let name = "Silas"
+        # res.render('home', {
+        user:'Silas',
+        name
+    })
+- Condicional no mustache
+    No arquivo routes/index.ts dentro do routes.get podemos criar condicionais para exibir ou esconder bloco de tags
+    # router.get('/', (req: Request, res: Response) =>{
+
+    let idade : number = 51
+    let showIdade: boolean = false
+
+    if(idade > 50){
+        showIdade = true
+    }
+
+
+    let name = "Amós"
+    res.render('home',{
+        user:' Silas',
+        name,
+        idade,
+        showIdade
+    })
+})
+    Já no arquvio home.mustache iremos receber a variavel showIdade
+    # {{#showIdade}}
+        Sou maior que 50 anos.
+    {{/showIdade}}
+
 
 
 

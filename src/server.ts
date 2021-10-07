@@ -1,8 +1,13 @@
 import express, {Request, Response} from 'express' // importando o express
 import mainRoutes from './routes/index' // importando o routes
 import path from 'path';
+import mustache from 'mustache-express'
 
 const server = express(); //armazendo o metodo express na const server
+
+server.set('view engine', 'mustache');  // chama o mustache
+server.set('views',  path.join(__dirname, 'views')); // mostra pro mustache onde fica a pasta
+server.engine('mustache', mustache()); //finaliza a chamada
 
 server.use(express.static(path.join(__dirname,'../public'))); // deixando mais dinamico as rotas
 
