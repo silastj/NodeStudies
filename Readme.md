@@ -228,8 +228,34 @@
         Sou maior que 50 anos.
     {{/showIdade}}
 
+- Exibir uma lista no Mustache
+    Iremos passar um array de objetos com chave e valor
+    # products:[
+            {title:'Amós', idade:37},
+            {title:'Samara', idade: 25},
+            {title:'Calebe', idade: 1}
+                ]
+
+    Iremos receber na view
+    # <ul>
+        {{#products}}
+            <li><strong>Nome:</strong> {{title}} - <strong>Idade:</strong> {{idade}}</li>
+        {{/products}}
+    </ul>
+    * Quando tiver um array apenas, colocaremos no meio da <li>{{.}}</li> para separar os valores dos arrays
+
+- Else na condicional ou no loop
+    # {{^carros}}
+        Aqui vai a frase de resposta da condicional ou loop, caso não tenha.
+    # {{/carros}}
 
 
+- Conteúdo Parcial
+Criaremos uma pasta dentro do views chamada partials e dentro dela colocaremos pedaçõs da página como header, footer para facilitar a mautenção e deixar a pagina mas fracionada
+# {{>partials/header}}
+
+- Recebendo dados da URL
+    
 
 
 

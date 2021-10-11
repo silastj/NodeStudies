@@ -1,0 +1,26 @@
+{{>partials/header}}
+<body>
+
+<p>Você está na <strong>Home</strong> e seu nome é {{user}} e sobrenome {{name}}</p>
+
+{{#showIdade}}
+    Sou maior que 50 anos.
+{{/showIdade}}
+
+<h2>Produtos</h2>
+<ul>
+    {{#products}}
+        <li><strong>Nome:</strong> {{title}} - <strong>Idade:</strong> {{idade}}</li>
+    {{/products}}
+    {{#carros}}
+        {{.}}
+    {{/carros}}
+    {{^carros}}
+        Não ha carros na Lista.
+    {{/carros}}
+</ul>
+
+{{>partials/footer}}
+</body>
+</html>
+
