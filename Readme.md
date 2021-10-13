@@ -255,7 +255,36 @@ Criaremos uma pasta dentro do views chamada partials e dentro dela colocaremos p
 # {{>partials/header}}
 
 - Recebendo dados da URL
+    Req => Pega as informações da requisição
+    Res => Envia as informações
+    Passando na rota que iremos visualizar:
+    # let nome: string = req.query.nome as string;
+    # let idade: string = req.query.idade as string;
     
+        res.render('pages/produtos', {
+            nome,
+            idade
+        })
+    Passando na url, via query string:
+    # http://localhost:4000/produtos?nome=silas&idade=37
+
+    Já na página de produtos iremos receber o {{nome}} {{idade}}
+
+    #     {{#nome}}
+        <li><strong>Nome:</strong> {{nome}} - <strong>Idade:</strong> {{idade}}</li>
+        {{/nome}}
+
+- Enviando via metodo POST pelo body da requisição:
+    Dentro do server add, ele traz o url query string para dentro do corpo
+    # server.use(express.urlenconded({extend: true}));
+
+    Mudamos o method: para POST
+    Criaremos uma rota post
+    # router.post 
+    passamos a regra de negocio dentro e no metodo get apenas passamos a rota da página
+
+    
+
 
 
 
