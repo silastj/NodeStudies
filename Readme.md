@@ -283,7 +283,17 @@ Criaremos uma pasta dentro do views chamada partials e dentro dela colocaremos p
     # router.post 
     passamos a regra de negocio dentro e no metodo get apenas passamos a rota da página
 
+- Introdução ao MVC
+* M - Model - modelo - onde está a regra de negocio, conecta com o banco de dados
+* V - View - visualização
+* C - Controller - controler - recebe as informações da view, solicita para o model
+
+- Trabalhando com Model
     
+
+
+
+
 
 
 
