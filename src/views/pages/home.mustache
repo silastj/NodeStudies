@@ -10,8 +10,12 @@
 <h2>Produtos</h2>
 <ul>
     {{#products}}
-        <li><strong>Nome:</strong> {{title}} - <strong>Idade:</strong> {{idade}}</li>
+        <li><strong>Nome:</strong> {{title}} - <strong>Preço:</strong> {{price}}</li>
     {{/products}}
+<h2>Produtos acima de R$3.000,00 reais</h2>
+    {{#products12}}
+        <li><strong>Nome:</strong> {{title}} - <strong>Preço:</strong> {{price}}</li>
+    {{/products12}}
     {{#carros}}
         {{.}}
     {{/carros}}
