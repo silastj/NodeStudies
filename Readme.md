@@ -288,7 +288,22 @@ Criaremos uma pasta dentro do views chamada partials e dentro dela colocaremos p
 * V - View - visualização
 * C - Controller - controler - recebe as informações da view, solicita para o model
 
-- Trabalhando com Model
+- Variáveis de ambiente
+     criaremos uma arquivo .env
+     O sistema inteiro tem acesso a esse arquivo
+
+    # npm install dotenv
+     importamos o dotenv no arquivo server.ts
+    # import dotenv from 'dotenv'
+    antes do const server = express() iremos chamar o dotenv:
+
+    # dotenv.config()
+
+    no server.listen no arquivo server.ts iremos deixar dinamico
+    # server.listen(process.env.PORT)
+
+
+
     
 
 

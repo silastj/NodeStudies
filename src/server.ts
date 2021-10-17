@@ -1,7 +1,10 @@
 import express, {Request, Response} from 'express' // importando o express
 import mainRoutes from './routes/index' // importando o routes
 import path from 'path';
+import dotenv from 'dotenv'
 import mustache from 'mustache-express'
+
+dotenv.config(); // iremos chamar o dotenv dantes do server.express()
 
 const server = express(); //armazendo o metodo express na const server
 
@@ -17,5 +20,6 @@ server.use((req: Request, res: Response) =>{  //página 404
     res.status(404).send('ERROR: Página não encontrada!')
 })
 
-server.listen(4000) // iniciando o servidor na porta 4000(locahost:4000)
+//server.listen(4000) // iniciando o servidor na porta 4000(locahost:4000)
+server.listen(process.env.PORT) // iniciando o servidor na porta 4000(locahost:4000)
 
