@@ -3,13 +3,13 @@ Projeto em Nodejs
 
 
 ### Pré-requisitos globais
-- npm install -g nodemon typescript ts-node
+`npm install -g nodemon typescript ts-node`
 
 ### Instalação
-- npm install
+`npm install`
 
 ### Rodar o projeto
-- npm run dev
+`npm run dev`
 
 
 # Passo a passo
@@ -24,4 +24,3 @@ Projeto em Nodejs
  * Criando o script para rodar 
  * Configurando o arquivo server.ts
  * Configurando as rotas
- 
