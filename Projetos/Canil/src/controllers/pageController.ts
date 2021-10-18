@@ -1,8 +1,7 @@
 import { Request, Response } from 'express'
 
 export const home = ( req: Request, res: Response ) => {
-    res.send('Home no ar!')
-    //res.render('pages/page')
+    res.render('pages/page')
 }
 export const cats = ( req: Request, res: Response ) => {
 

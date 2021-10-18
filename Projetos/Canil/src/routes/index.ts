@@ -6,8 +6,8 @@ const router = Router();
 
 //router Home
 router.get('/', PageController.home)
-router.get('/cats', PageController.cats)
 router.get('/dogs', PageController.dogs)
+router.get('/cats', PageController.cats)
 router.get('/fishes', PageController.fishes)
 
 //Busca
