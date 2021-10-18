@@ -22,3 +22,6 @@ Projeto em Nodejs
  * instalar dependencias  de desenvolvimentos
  - npm install --save-dev @types/express @types/mustache-express @types/node
  * Criando o script para rodar 
+ * Configurando o arquivo server.ts
+ * Configurando as rotas
+ 
