@@ -1,0 +1,11 @@
+{
+  "name": "canil",
+  "version": "1.0.0",
+  "description": "Projeto do Canil",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "asilas",
+  "license": "ISC"
+}
