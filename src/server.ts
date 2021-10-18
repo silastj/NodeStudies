@@ -10,7 +10,7 @@ const server = express(); //armazendo o metodo express na const server
 
 server.set('view engine', 'mustache');  // chama o mustache
 server.set('views',  path.join(__dirname, 'views')); // mostra pro mustache onde fica a pasta
-server.engine('mustache', mustache()); //finaliza a chamada
+server.engine('mustache', mustache()); //finaliza a chamada rodando o mustache
 
 server.use(express.static(path.join(__dirname,'../public'))); // deixando mais dinamico as rotas
 

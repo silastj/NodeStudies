@@ -12,6 +12,17 @@
 
 --------------------------------------------------------
 
+### Pré-requisitos globais
+- npm install -g nodemon typescript ts-node
+
+### Instalação
+- npm install
+
+### Rodar o projeto
+- npm run dev
+
+--------------------------------------------------------
+
 ### COMANDOS PARA INICIAR PROJETO e BIBLIOTECAS ###
 
 - Iniciar o node
