@@ -10,6 +10,6 @@ router.get('/dogs', PageController.dogs)
 router.get('/cats', PageController.cats)
 router.get('/fishes', PageController.fishes)
 
-//Busca
+//router Busca
 router.get('/search', SearchController.search)
 export default router;
