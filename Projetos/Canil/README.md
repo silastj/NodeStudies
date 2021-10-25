@@ -37,12 +37,41 @@ Projeto em Nodejs
  * Na pasta view coloca a variavel condicional abrindo e fechando e dentro de cada div trazendo o seus valores como image,name,cor e sex
 
 
-
-
 * Criando Busca 
-Importando o menu e model, criaremos o render e inserimos o menu
+Importando o menu e model, criaremos o render e inserimos o menu, obs exportamos o query e 
+pegamos no header para inserir o valor no atributo value="{{query}}"
 
 
 * Criando a pág 404
 Criaremos a pág 404.mustache
 dentro do server.ts apontamos para a pág res.render('pages/404')
+
+* add no Heroku
+Precisamos informar o heroku qual node estamos trabalhando
+node -v no terminal
+depois iremos colocar dentro do package.json
+"engines":{ "node": "15.x},
+
+Na raiz criaremos um novo arquivo Procfile
+Dentro dele iremos inseri os dados de uma pergunta, como faço para rodar o projeto?:
+web : npm start
+Criamos dentro do package.json o script start
+"start": "node dist/server.ts",
+Para importar o views instalamos a biblieoteca copyfiles
+npm install --save-dev copyfiles
+
+Inserimos mais um script no package.json
+"postinstall": "tsc && copyfiles -u 1 src/**/*.mustache dist/",
+
+depois que rodamos  npm run postinstall
+ela cria a pasta dist e depois rodamos npm start para ele rodar com os arquvos .js
+
+
+Depois de criar a conta no heroku iremos procurar o heroku cli
+
+Após instalar, verificar se foi instalado, heroku --version
+heroku login
+
+Depois iremos até a pasta do projeto
+heroku create
+depois git add . git commit -m "add heroku" git push origin heroku master
