@@ -59,3 +59,36 @@ PG_PORT=5432
 
 ## MODELS NO SEQUELIZE + TYPESCRIPT
 
+Consultando dados no model
+- import { Op } from 'sequelize'
+- export const home = async (req: Request, res: Response) => {
+    let searchName: string = 'te'
+    let users = await User.findAll({
+        // where: { name: ['aSilas', 'Samara']}
+        // ou
+        // where: {
+        //     [Op.or]:[
+        //         { age: 30},
+        //         { age: 90}
+        //     ]
+        // }
+        where:{
+            age: {
+                [Op.gt]: 40, // > 40
+                // [Op.gte]: 40, >=40
+                // [Op.lt]: 40,  < 40
+                // [Op.lte]: 30, <= 30
+                //[Op.notIn]: [30, 55] 
+                //[Op.In]: [10, 20] 
+                
+            },
+            name:{
+                // [Op.like]: '%a%'
+                [Op.like]: `${searchName}%`
+            }
+        }
+    });
+    console.log('usuarios: ', JSON.stringify(users));
+};
+
+## Ordernando resultados
