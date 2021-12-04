@@ -11,33 +11,54 @@ import { User } from '../models/User'
 
 export const home = async (req: Request, res: Response) => {
 
-    let searchName: string = 'te'
-    let users = await User.findAll({
-        // where: { name: ['aSilas', 'Samara']}
-        // ou
-        // where: {
-        //     [Op.or]:[
-        //         { age: 30},
-        //         { age: 90}
-        //     ]
-        // }
-        where:{
-            age: {
-                [Op.gt]: 40, // > 40
-                // [Op.gte]: 40, >=40
-                // [Op.lt]: 40,  < 40
-                // [Op.lte]: 30, <= 30
-                //[Op.notIn]: [30, 55] 
-                //[Op.In]: [10, 20] 
+
+    const newuser = User.build({
+        name: 'Samarinha'
+    })
+    await newuser.save();
+
+    const newnew = await User.create({
+        name:'Velhinho',
+        age: 60
+    })
+
+    // let searchName: string = 'te'
+    // let users = await User.findAll({
+    //     where: { name: ['aSilas', 'Samara']}
+    //     ou
+    //     where: {
+    //         [Op.or]:[
+    //             { age: 30},
+    //             { age: 90}
+    //         ]
+    //     }
+    //     where:{
+    //         age: {
+    //             [Op.gt]: 40, // > 40
+    //             [Op.gte]: 40, >=40
+    //             [Op.lt]: 40,  < 40
+    //             [Op.lte]: 30, <= 30
+    //             [Op.notIn]: [30, 55] 
+    //             [Op.In]: [10, 20] 
+    //             [Op.gte]:18,
                 
-            },
-            name:{
-                // [Op.like]: '%a%'
-                [Op.like]: `${searchName}%`
-            }
-        }
-    });
-    console.log('usuarios: ', JSON.stringify(users));
+    //         },
+    //         name:{
+    //             [Op.like]: '%a%'
+    //             [Op.like]: `${searchName}%`
+    //         }
+    //     },
+    //     offset: 2,
+    //     limit: 2,
+        
+    //     order: ['name']
+    //     order:[
+    //         ['name', 'DESC']
+    //         ['age', 'ASC'],
+
+    //     ],
+    // });
+    // console.log('usuarios: ', JSON.stringify(users));
 
 
 
@@ -60,6 +81,6 @@ export const home = async (req: Request, res: Response) => {
         products: list,
         expensives: expensiveList,
         frasesDoDia: [],
-        users
+        // users
     });
 };

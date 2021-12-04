@@ -92,3 +92,28 @@ Consultando dados no model
 };
 
 ## Ordernando resultados
+
+- Colocar dentro do users
+- order: ['name']
+ order:[
+            ['name', 'DESC']
+            ['age', 'ASC'],
+        ]
+
+## Limitar os resultados
+offset:2 // quantidade de páginas que ele ira pular
+limit:2 // limite de resultados por páginas
+
+## Inserindo dados com Sequelize
+- build + save
+
+const newuser = User.build({ name: 'NoNoNO'});
+await newuser.save()
+
+
+- create
+
+const usernew = await User.create({
+    name: 'Velhinho',
+    age: 60
+})
