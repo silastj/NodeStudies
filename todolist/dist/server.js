@@ -14,6 +14,10 @@ server.use((0, cors_1.default)());
 server.use(express_1.default.static(path_1.default.join(__dirname, '../public')));
 server.use(express_1.default.urlencoded({ extended: true }));
 server.get('/ping', (req, res) => res.json({ pong: true }));
+server.get('/random', (req, res) => {
+    let nRand = Math.floor(Math.random() * 100);
+    res.json(`Você tem ${nRand} anos de idade.`);
+});
 server.use(api_1.default);
 server.use((req, res) => {
     res.status(404);
