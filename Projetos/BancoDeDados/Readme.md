@@ -12,6 +12,7 @@
 
 ## Instalando o PostgreSQL
 - https://www.postgresql.org/download/windows/
+- user postgres
 - senha 1234
 - porta 5432
 
